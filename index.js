@@ -1,9 +1,15 @@
 const numeroaleatorio = Math.floor(Math.random()*100)+1
 const numeroEntrada = document.getElementById(`validador`)
 const menasaje = document.getElementById(`respuesta`)
+const intento = document.getElementById(`intentos`)
+intentos = 0
+
 
 function aganar() {
 let numeroIngreso = parseInt(numeroEntrada.value)
+
+intentos ++
+intento.textContent = intentos
 
 
 if (numeroIngreso <1 || numeroIngreso >100 || isNaN(numeroIngreso)) {
@@ -13,9 +19,9 @@ if (numeroIngreso <1 || numeroIngreso >100 || isNaN(numeroIngreso)) {
 if (numeroIngreso === numeroaleatorio) {
     menasaje.textContent = `!Felicitaciones Ganaste!!`
 }else if( numeroIngreso < numeroaleatorio){
-    menasaje.textContent = `Mas Alto ! el numero que ingresaste es alto!`
+    menasaje.textContent = `Mas Alto ! el numero que ingresaste es muy bajo!`
 }else {
-    menasaje.textContent = `Mas Bajo ! el numero que ingresaste es menor!`
+    menasaje.textContent = `Mas Bajo ! el numero que ingresaste es mayor!`
 
 }
 }
